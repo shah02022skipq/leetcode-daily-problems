@@ -14,17 +14,16 @@ Return a 0-indexed integer array answer of size 2 where answer[0] is the number 
  */
  var numberOfPairs = function(nums) {
     let answer = []
-    let tobeRemoved = []
     let pairCount=0
     for(let i=0 ; i<nums.length ; i++){
         for(let j=i+1 ; j<nums.length ; j++){
             if(nums[i]==nums[j]){   
-                // console.log("arr["+i+"]: "+ nums[i]+"  arr["+j+"]: "+nums[j])
+                
                 remove(nums, nums[i])
                 remove(nums, nums[j-1])
                 pairCount ++        
                 i--
-                // console.log(nums)
+                
                 break
             }            
         }
