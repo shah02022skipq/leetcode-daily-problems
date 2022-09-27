@@ -12,7 +12,7 @@ const logestSubStringWithoutRepition = (str) => {
             winStart ++ 
         }
         set.push(arr[winEnd])
-        maxWindowSize = Math.max(maxWindowSize, (winEnd - winStart + 1))
+        maxWindowSize = Math.max(maxWindowSize, set.length)
     }
 
     return maxWindowSize
