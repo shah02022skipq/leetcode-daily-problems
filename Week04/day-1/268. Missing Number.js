@@ -1,5 +1,6 @@
 /**
- * Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+ * Given an array nums containing n distinct numbers in the range [0, n], return the only number 
+ * in the range that is missing from the array. 
  */
 
 /**
@@ -11,9 +12,20 @@
     // return hashingMethod(nums) /*Method 1, time => O(N) & space => O(N)*/     
     // return summationFormula(nums) /*Method 1, time => O(N) & space => O(1), but can
     // occer overflow*/
-    return xor(nums) /*Method 1, time => O(N) & space => O(1)*/
+    // return xor(nums) /*Method 1, time => O(N) & space => O(1)*/
+    return cyclicSort(nums) /*Method 4, time => O(N) & space => O(1)*/
     
 };
+/*Method - 4*/
+const cyclicSort = (nums) => {
+    nums.sort((a, b) => a-b)
+    
+    for(let i=0 ; i<nums.length+1 ; i++){
+        if(nums[i] != i)
+            return i
+    }
+
+}
 
 /*Method - 3*/
 const xor = (nums) => {
